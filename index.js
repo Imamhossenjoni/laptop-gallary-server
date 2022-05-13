@@ -30,12 +30,12 @@ async function run() {
             const product = await laptopCollection.findOne(query);
             res.send(product);
         });
-        // //add product
-        // app.post('/laptops', async (req, res) => {
-        //     const newService = req.body;
-        //     const result = await laptopCollection.insertOne(newService);
-        //     res.send(result);
-        // });
+        //add product
+        app.post('/laptops', async (req, res) => {
+            const newService = req.body;
+            const result = await laptopCollection.insertOne(newService);
+            res.send(result);
+        });
         //DELETE
         app.delete('/laptops/:id', async (req, res) => {
             const id = req.params.id;
