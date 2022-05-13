@@ -81,12 +81,12 @@ async function run() {
             }
         })
         // order collection api
-        app.post('/order', async (req, res) => {
-            const order = req.body;
-            console.log({ order })
-            const result = await orderCollection.insertOne(order);
-            res.send(result);
-        })
+        // app.post('/order', async (req, res) => {
+        //     const order = req.body;
+        //     console.log({ order })
+        //     const result = await orderCollection.insertOne(order);
+        //     res.send(result);
+        // })
 
 
     }
