@@ -52,21 +52,21 @@ async function run() {
         
 
         //update product
-        // app.put('laptops/:id',async(req,res)=>{
-        //     const id=req.params.id;
-        //     const updatedQuantity=req.body;
-        //     console.log(updatedQuantity);
-        //     const filter={_id:ObjectId(id)}
-        //     const options={upsert:true};
-        //     const updatedDoc={
-        //         $set:{
-        //             quantity:updatedQuantity.quantity
-        //         }
-        //     };
-        //     console.log(updatedDoc)
-        //     const result=await laptopCollection.updateOne(filter,updatedDoc,options);
-        //     res.send(result);
-        // })
+        app.put('laptops/:id',async(req,res)=>{
+            const id=req.params.id;
+            const updatedQuantity=req.body;
+            console.log(updatedQuantity);
+            const filter={_id:ObjectId(id)}
+            const options={upsert:true};
+            const updatedDoc={
+                $set:{
+                    quantity:updatedQuantity.quantity
+                }
+            };
+            console.log(updatedDoc)
+            const result=await laptopCollection.updateOne(filter,updatedDoc,options);
+            res.send(result);
+        })
         app.get('/order', async (req, res) => {
             const email = req.query.email;
             const query = { email: email };
