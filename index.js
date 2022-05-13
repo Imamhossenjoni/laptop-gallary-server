@@ -43,12 +43,12 @@ async function run() {
             const laptop = await laptopCollection.deleteOne(query);
             res.send(laptop);
         })
-        // app.delete('/order/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) }
-        //     const order = await laptopCollection.deleteOne(query);
-        //     res.send(order);
-        // })
+        app.delete('/order/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) }
+            const order = await laptopCollection.deleteOne(query);
+            res.send(order);
+        })
         
 
         //update product
